@@ -1,0 +1,7 @@
+# Ambiente virtual
+.venv/
+
+# Arquivos de rastreamento e dados
+*.edf
+*.trc
+*.json
