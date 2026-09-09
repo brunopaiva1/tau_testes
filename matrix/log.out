@@ -1,0 +1,12 @@
+[31m[Pascal][0m [Errno 2] No such file or directory: './teste_tau1'
+Traceback (most recent call last):
+  File "/home/brunopaiva/pascalsuite-analyzer/pascalanalyzer/run.py", line 639, in main
+    app.run(configs)
+  File "/home/brunopaiva/pascalsuite-analyzer/pascalanalyzer/pascalrun.py", line 653, in run
+    res = subprocess.Popen(cmd, env=job_env, stdout=stdout, stderr=stdout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: './teste_tau1'
