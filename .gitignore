@@ -1,5 +1,6 @@
 # Ambiente virtual
 .venv/
+tau_teste/
 
 # Arquivos de rastreamento e dados
 *.edf

@@ -14,4 +14,4 @@ tau_cxx.sh -optOpari -fopenmp -O2 matrix.cpp -o teste_tau2
 
 # tau_cxx.sh -g -O0 -no-pie -fopenmp matrix_manual.cpp -o teste_tau1
 
-/home/brunopaiva/pascalsuite-analyzer/venv/bin/pascalanalyzer ./teste_tau2 -t tau --taub -c 1,2,4,8 -i "2048" -o tau_teste.tar
+/home/brunopaiva/pascalsuite-analyzer/venv/bin/pascalanalyzer ./teste_tau2 -t tau --taub -r 5 -c 1,2,4,8 -i "2048" -o tau_teste.tar

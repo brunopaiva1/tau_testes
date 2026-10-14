@@ -2,18 +2,21 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-
+#include "pascalops.h"
 
 void initialize_matrices(std::vector<double>& A, std::vector<double>& B, int N) {
+    pascal_start(0);
     #pragma omp parallel for
     for (int i = 0; i < N * N; i++) {
         unsigned int seed = 123 + i;
         A[i] = (double)rand_r(&seed) / RAND_MAX;
         B[i] = (double)rand_r(&seed) / RAND_MAX;
     }
+    pascal_stop(0)
 }
 
 void matrix_multiply(const std::vector<double>& A, const std::vector<double>& B, std::vector<double>& C, int N) {
+    pascal_start(1);
     #pragma omp parallel for
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -24,6 +27,7 @@ void matrix_multiply(const std::vector<double>& A, const std::vector<double>& B,
             C[i * N + j] = sum;
         }
     }
+    pascal_stop(1);
 }
 
 void matrix_add_heavy(const std::vector<double>& C, const std::vector<double>& A, std::vector<double>& D, int N) {
